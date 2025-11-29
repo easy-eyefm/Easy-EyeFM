@@ -1,0 +1,335 @@
+/* Professional background system - layered by page function */
+
+/* ================================
+   Layered background system
+   ================================ */
+
+/* Level 1: Marketing pages - highest visual impact */
+.bg-marketing {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-marketing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 1;
+}
+
+.bg-marketing::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.bg-marketing .floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg-marketing .float-element {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Level 2: Application pages - balance style and usability */
+.bg-app {
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+  position: relative;
+}
+
+.bg-app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.5;
+}
+
+/* Level 3: Functional pages - content first */
+.bg-functional {
+  background: #111111;
+  position: relative;
+}
+
+.bg-functional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+}
+
+/* Level 4: Form pages - minimal styling */
+.bg-minimal {
+  background: #0f0f0f;
+}
+
+/* ================================
+   Specific page backgrounds
+   ================================ */
+
+/* Home page - richest visual effects */
+.bg-homepage {
+  @apply bg-marketing;
+}
+
+.bg-homepage .glow-left {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.bg-homepage .glow-right {
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(ellipse, rgba(147, 197, 253, 0.1) 0%, transparent 50%);
+  filter: blur(60px);
+  z-index: 1;
+}
+
+/* Dashboard - professional tool aesthetic */
+.bg-dashboard {
+  background: #0d1117;
+  position: relative;
+}
+
+.bg-dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.3;
+}
+
+/* Auth pages - centered focus */
+.bg-auth {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-auth::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Upload page - clear boundaries */
+.bg-upload {
+  background: #111111;
+  position: relative;
+}
+
+.bg-upload::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.02) 50%, transparent 100%);
+}
+
+/* Results page - highlight key insights */
+.bg-results {
+  background: linear-gradient(to bottom, #0a0a0a 0%, #111111 100%);
+  position: relative;
+}
+
+.bg-results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+}
+
+/* Settings page - clean and focused */
+.bg-settings {
+  background: #0f0f0f;
+  position: relative;
+}
+
+.bg-settings::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.01) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+/* ================================
+   Animations and interactions
+   ================================ */
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+/* Floating element size variations */
+.float-1 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.float-2 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.float-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 30%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+/* ================================
+   Responsive adjustments
+   ================================ */
+
+@media (max-width: 768px) {
+  .bg-marketing::after,
+  .bg-homepage .glow-left,
+  .bg-homepage .glow-right {
+    opacity: 0.7;
+    filter: blur(30px);
+  }
+  
+  .bg-marketing .float-element {
+    animation-duration: 4s;
+  }
+  
+  .bg-auth::before {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+/* ================================
+   Accessibility support
+   ================================ */
+
+/* Reduced motion configuration */
+@media (prefers-reduced-motion: reduce) {
+  .bg-marketing .float-element {
+    animation: none;
+  }
+  
+  .bg-marketing::after,
+  .bg-homepage .glow-left,
+  .bg-homepage .glow-right {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .bg-marketing,
+  .bg-app,
+  .bg-functional,
+  .bg-minimal {
+    background: #000000;
+  }
+  
+  .bg-marketing::before,
+  .bg-app::before,
+  .bg-functional::before {
+    opacity: 0.1;
+  }
+}
+
+/* ================================
+   Dark/light theme toggle
+   ================================ */
+
+/* Reserved light theme */
+[data-theme="light"] .bg-marketing {
+  background: #f8fafc;
+}
+
+[data-theme="light"] .bg-marketing::before {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+}
+
+[data-theme="light"] .bg-app {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+[data-theme="light"] .bg-functional {
+  background: #ffffff;
+}
+
+[data-theme="light"] .bg-minimal {
+  background: #fafafa;
+}
